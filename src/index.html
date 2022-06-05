@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kdam+Thmor+Pro&display=swap" rel="stylesheet">
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+
+<script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <title>Tic-Tac-Toe Multiplayer</title>
+</head>
+<body>
+    <div class="main">
+        <div class="disable-click" id="disable-click"></div>
+        <div class="grid">
+            <div onclick="clicklistner(1)" class="grid-item grid-item-1"></div>
+            <div onclick="clicklistner(2)" class="grid-item grid-item-2"></div>
+            <div onclick="clicklistner(3)" class="grid-item grid-item-3"></div>
+            <div onclick="clicklistner(4)" class="grid-item grid-item-4"></div>
+            <div onclick="clicklistner(5)" class="grid-item grid-item-5"></div>
+            <div onclick="clicklistner(6)" class="grid-item grid-item-6"></div>
+            <div onclick="clicklistner(7)" class="grid-item grid-item-7"></div>
+            <div onclick="clicklistner(8)" class="grid-item grid-item-8"></div>
+            <div onclick="clicklistner(9)" class="grid-item grid-item-9"></div>
+        </div>
+        
+        <div id="turn-display">Turn will show up here</div>
+        <div class="scoreboard">
+            <div class="my-score">
+                <div class="my-name">Enter your name
+                </div>
+                <img src="" id="my-goti" alt="">
+              </div>
+              <div class="vs">vs</div>
+              <div class="opponent-score">
+                <div class="opponent-name">Waiting for other user</div>
+                <img src="" id="opponent-goti" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- notification -->
+    <div id="notification">
+      this is sample
+    </div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary settings" id="settingsbtn" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Settings
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Settings</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          
+
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+              </div>
+              <div class="spinner-border" id="spinner" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <div id="otheruserwaiting">
+                  Waiting for other user
+              </div>
+              <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" role="switch" id="play-music">
+                <label class="form-check-label" for="play-music">Play Music</label>
+              </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="savechanges">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <script src="/script.js"></script>
+</body>
+</html>

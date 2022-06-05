@@ -1,0 +1,184 @@
+*{margin: 0;padding: 0;}
+body{
+    user-select: none;
+}
+.main{
+    /* width: 100vw;
+    height: 100vh; */
+    background-color: #240229;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    width: fit-content;
+    margin: 10px auto;
+}
+.grid-item{
+    width: 120px;
+    height: 120px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.grid-item>img{
+    width: 100%;
+    height: 100%;
+}
+.scoreboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.my-score,.opponent-score{
+    width: 40%;
+    border: 2px solid rgb(0, 255, 55);
+    border-radius: 10px;
+    margin: 2px;
+    padding: 10px;
+    transition: all 325ms;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.my-score:hover,.opponent-score:hover{
+    background-color: rgba(0, 255, 55,0.2);
+}
+.my-name,.opponent-name{
+    color: red;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    font-family: 'Kdam Thmor Pro', sans-serif;
+}
+#my-goti,#opponent-goti{
+    height: 200px;
+}
+.vs{
+    color: white;
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 10px;
+}
+#notification{
+    position: fixed;
+    z-index: 10000;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    font-family: cursive;
+    height: 50px;
+    width: 100vw;
+    background-image: linear-gradient(to right,transparent, yellow,yellow,yellow, transparent);
+    top: 50%;
+    left:-100vw;
+}
+@keyframes shownotification{
+    0%{
+        left: -100vw;
+    }
+    100%{
+        left: 0vw;
+    }
+}
+@keyframes hidenotification{
+    0%{
+        left: 0vw;
+    }
+    100%{
+        left: 100vw;
+    }
+}
+#turn-display{
+    width: 85%;
+    padding: 5px;
+    margin: 10px auto;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    /* font-weight: bold; */
+    font-family: fantasy;
+}
+
+.disable-click{
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.settings{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.grid-item-1{
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.grid-item-2{
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    border-left: 1px solid white;
+}
+.grid-item-3{
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.grid-item-4{
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.grid-item-5{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    border-right: 1px solid white;
+}
+.grid-item-6{
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+}
+.grid-item-7{
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
+.grid-item-8{
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+    border-left: 1px solid white;
+}
+.grid-item-9{
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
+
+@media screen and (max-width:600px){
+    .my-score,.opponent-score{
+        padding: 5px;
+    }
+    .opponent-name,.my-name{
+        font-size: 25px;
+    }
+}
